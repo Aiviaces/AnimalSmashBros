@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AnimalSmashBros.iml" filepath="$PROJECT_DIR$/AnimalSmashBros.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/reference/Battle.iml" filepath="$USER_HOME$/Desktop/reference/Battle.iml" />
+    </modules>
+  </component>
+</project>
