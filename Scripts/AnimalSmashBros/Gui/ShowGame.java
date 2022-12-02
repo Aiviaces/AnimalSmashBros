@@ -33,8 +33,14 @@ public class ShowGame extends JFrame implements Consts
         bgs.add(new Demo("Resources/Images/bg.png",0,0));
         //添加第一层个体(设置大小)
         Animal cat=new Cat();
+            Animal cat1=new Cat();
+            cat1.getTexture().setX(300);
+            cat1.getTexture().setY(300);
+            cat1.setKeySet(new char[]{'i','j','k','l'});
         demos.add(cat.getTexture());
-        for (Demo demo : demos) demo.setSize(0.5);
+        demos.add(cat1.getTexture());
+
+        for (Demo demo : demos) demo.setSize(0.2);
 
         //层级面板
         JLayeredPane layeredPane=new JLayeredPane();
@@ -57,6 +63,10 @@ public class ShowGame extends JFrame implements Consts
         //开启监听
         UnFighting act=new UnFighting(cat);
         this.addKeyListener(act);
+
+            UnFighting act1=new UnFighting(cat1);
+            this.addKeyListener(act1);
+
         //设置图像更新
         Timer show=new Timer();
         show.schedule(new TimerTask() {

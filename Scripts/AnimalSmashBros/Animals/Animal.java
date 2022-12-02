@@ -28,6 +28,8 @@ public abstract class Animal implements Actions
     private String img_url; //贴图路径
     Demo texture; //个体变量
 
+    private char[] keySet=new char[]{'w','a','s','d'}; /* 键位 */
+
     private Queue<KeyEvent> FQ; /* 核心--操作队列 */
 
     public Animal(int type, int HP_Init, int ATK_Init, int DEF_Init, int SPEED_init,String img_url)
@@ -81,4 +83,7 @@ public abstract class Animal implements Actions
     public String getName() {return name;}
     public int getType() {return type;}
     public int getHP_Init() {return HP_Init;}
+    public void setKeySet(char[] keySet) {this.keySet = keySet;}
+    public char[] getKeySet() {return keySet;}
+
 }

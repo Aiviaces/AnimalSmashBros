@@ -3,13 +3,11 @@ package AnimalSmashBros.Animals;
 import AnimalSmashBros.ConstVars.Consts;
 import AnimalSmashBros.Gui.Demo;
 
-/* 两个动物类比较重复,是因为考虑到可以再所有功能中加入技能效果什么的 */
-
-public class Cat extends Animal implements Consts
+public class Dog extends Animal implements Consts
 {
     private Demo Texture=super.getTexture();
-    public Cat()
-    {super(0,100, 10, 5, 15,"Resources/Images/cat.png");}
+    public Dog()
+    {super(0,100, 10, 5, 15,"Resources/Images/dog.png");}
 
     @Override
     public void move(int toward)

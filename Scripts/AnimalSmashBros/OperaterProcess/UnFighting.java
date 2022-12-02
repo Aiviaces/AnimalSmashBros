@@ -13,6 +13,7 @@ public class UnFighting implements KeyListener
     private long sTime;
     private long eTime;
     private Animal from;
+    private char[] KEYS;
     private boolean up=false;
     private boolean down=false;
     private boolean left=false;
@@ -21,6 +22,7 @@ public class UnFighting implements KeyListener
     public UnFighting(Animal from)
     {
         this.from = from;
+        KEYS=from.getKeySet();
         //System.out.printf("上:%b 做:%b 下:%b 右:%b\n",up,left,down,right);
         //自由移动的线程
         Thread move_random = new Thread(() -> {
@@ -42,21 +44,11 @@ public class UnFighting implements KeyListener
     @Override
     public void keyTyped(KeyEvent e)
     {
-        keyPressed(e);
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e)
-    {
-        //System.out.printf("按下%c\n",e.getKeyChar());
         char op=e.getKeyChar();
-        switch (op)
-        {
-            case 'a'->left=true;
-            case 'w'->up=true;
-            case 'd'->right=true;
-            case 's'->down=true;
-        }
+        if(op==KEYS[0]) up=true;
+        else if(op==KEYS[1]) left=true;
+        else if(op==KEYS[2]) down=true;
+        else if(op==KEYS[3]) right=true;
     }
 
     @Override
@@ -64,14 +56,13 @@ public class UnFighting implements KeyListener
     {
         //System.out.printf("松开%c\n",e.getKeyChar());
         char op=e.getKeyChar();
-        switch (op)
-        {
-            case 'a'->left=false;
-            case 'w'->up=false;
-            case 'd'->right=false;
-            case 's'->down=false;
-        }
+        if(op==KEYS[0]) up=false;
+        else if(op==KEYS[1]) left=false;
+        else if(op==KEYS[2]) down=false;
+        else if(op==KEYS[3]) right=false;
     }
 
+    @Override
+    public void keyPressed(KeyEvent e) {}
     public Animal getFrom() {return from;}
 }
