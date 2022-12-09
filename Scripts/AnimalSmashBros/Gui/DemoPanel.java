@@ -1,6 +1,6 @@
 package AnimalSmashBros.Gui;
 
-import AnimalSmashBros.ConstVars.Consts;
+import AnimalSmashBros.Interfaces.Consts;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class DemoPanel extends JPanel implements Consts
 {
     private Integer level; //面板层级
     private List<Demo> entities=new ArrayList<>(); //个体列表
-    public DemoPanel(List<Demo> demos,int level) //构造函数-统一设置属性
+    public DemoPanel(List<Demo> demos,int level,boolean Opaque) //构造函数-统一设置属性
     {
         entities=demos;
         this.level=level*100;

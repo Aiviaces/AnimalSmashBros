@@ -8,8 +8,8 @@ public interface Actions
     void fistbump(); /*对拳行为--对拳是可以发动"替身"*/
 
     /* 状态变化 */
-    void HPchange(boolean Up_Or_Down);
-    void ATKchange(boolean Up_Or_Down);
-    void DEFchange(boolean Up_Or_Down);
-    void SPEEDchange(boolean Up_Or_Down);
+    void HPchange(boolean Up_Or_Down,int val);
+    void ATKchange(boolean Up_Or_Down,int val);
+    void DEFchange(boolean Up_Or_Down,int val);
+    void SPEEDchange(boolean Up_Or_Down,int val);
 }
